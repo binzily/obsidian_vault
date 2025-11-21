@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1fb46ccae9e6e590",
+        "id": "1369e2ac25f693d9",
         "type": "tabs",
         "children": [
           {
-            "id": "46be6ca5b1ca66e2",
+            "id": "74a165598b649f0c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "丁师兄/阶段2/async_武沛齐.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "async_武沛齐"
             }
           }
         ]
@@ -177,9 +181,52 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "46be6ca5b1ca66e2",
+  "active": "74a165598b649f0c",
   "lastOpenFiles": [
-    "这是一个测试.md",
-    "Untitled"
+    "丁师兄/阶段2/async_总结.md",
+    "pics/assets/1548152359604.png",
+    "pics/assets/1548122271773.png",
+    "Hyper_Brain/机器人轨迹规划/EDMP.md",
+    "Hyper_Brain/机器人轨迹规划/misc知识.md",
+    "LLM面试题/Prompt+Langchain.md",
+    "LLM面试题/数学python+深度学习.md",
+    "LLM面试题/强化学习.md",
+    "LLM面试题/夯实基础+进阶必备.md",
+    "Hyper_Brain/工作日志.md",
+    "比赛/中关村第二届具身智能.md",
+    "pics/assets/1548124888578.png",
+    "pics/assets/1548123942072.png",
+    "pics/assets/1548122420253.png",
+    "pics/assets/1547105026929.png",
+    "pics/assets/1547103297864.png",
+    "算法题/数组.md",
+    "代码基本功/learn_cpp.md",
+    "代码基本功/C++提高编程.md",
+    "代码基本功/三维立体视觉.md",
+    "算法题",
+    "丁师兄/阶段1/Llama & T5.md",
+    "丁师兄/阶段1/Insruct GPT论文.md",
+    "丁师兄/阶段1/ChatGPT.md",
+    "丁师兄/阶段5/微调.md",
+    "丁师兄/阶段2/Qwen_fastapi.md",
+    "丁师兄/阶段2/fastapi_yuan老师.md",
+    "丁师兄/阶段2/async_武沛齐.md",
+    "丁师兄/阶段4/VectorDB.md",
+    "丁师兄/阶段4/langchain.md",
+    "丁师兄/huggingface/huggingface.md",
+    "丁师兄/阶段0(bxwang)/阶段0.md",
+    "丁师兄/阶段1",
+    "丁师兄/阶段5",
+    "丁师兄/阶段2",
+    "丁师兄/阶段4",
+    "丁师兄/阶段3",
+    "丁师兄/huggingface",
+    "丁师兄/阶段0(bxwang)",
+    "丁师兄",
+    "代码基本功/黑马cpp核心编程.md",
+    "代码基本功",
+    "pics/assets/v2-4868fef130a63cad60f185b185d9b849_1440w.jpg",
+    "pics/assets/Untitled diagram-2025-04-16-014316.png",
+    "pics/assets/clip_image002.png"
   ]
 }

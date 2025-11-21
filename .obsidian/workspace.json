@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "丁师兄/阶段2/async_武沛齐.md",
+                "file": "Competitions/BAAI.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "async_武沛齐"
+              "title": "BAAI"
             }
           }
         ]
@@ -183,6 +183,9 @@
   },
   "active": "74a165598b649f0c",
   "lastOpenFiles": [
+    "丁师兄/阶段2/async_武沛齐.md",
+    "Competitions/BAAI.md",
+    "Competitions",
     "丁师兄/阶段2/async_总结.md",
     "pics/assets/1548152359604.png",
     "pics/assets/1548122271773.png",
@@ -210,7 +213,6 @@
     "丁师兄/阶段5/微调.md",
     "丁师兄/阶段2/Qwen_fastapi.md",
     "丁师兄/阶段2/fastapi_yuan老师.md",
-    "丁师兄/阶段2/async_武沛齐.md",
     "丁师兄/阶段4/VectorDB.md",
     "丁师兄/阶段4/langchain.md",
     "丁师兄/huggingface/huggingface.md",
@@ -224,7 +226,6 @@
     "丁师兄/阶段0(bxwang)",
     "丁师兄",
     "代码基本功/黑马cpp核心编程.md",
-    "代码基本功",
     "pics/assets/v2-4868fef130a63cad60f185b185d9b849_1440w.jpg",
     "pics/assets/Untitled diagram-2025-04-16-014316.png",
     "pics/assets/clip_image002.png"

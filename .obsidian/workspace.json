@@ -11,14 +11,12 @@
             "id": "74a165598b649f0c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Hyper_Brain/实习简历包装.md",
-                "mode": "source",
-                "source": false
+                "file": "Hyper_Brain/KTD.pdf"
               },
-              "icon": "lucide-file",
-              "title": "实习简历包装"
+              "icon": "lucide-file-text",
+              "title": "KTD"
             }
           }
         ]
@@ -184,10 +182,10 @@
   },
   "active": "74a165598b649f0c",
   "lastOpenFiles": [
+    "Hyper_Brain/实习简历包装.md",
     "Hyper_Brain/KTD.pdf",
     "Hyper_Brain/重要经验/重装WSL2 + 管理多个cuda.md",
     "Hyper_Brain/重要经验/代理设置.md",
-    "Hyper_Brain/实习简历包装.md",
     "Hyper_Brain/RoboFlamingo.md",
     "Hyper_Brain/工作日志.md",
     "Competitions/BAAI中关村具身智能大脑大模型赛道——Rank3.md",

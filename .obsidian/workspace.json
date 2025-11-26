@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "世界模型"
             }
+          },
+          {
+            "id": "d48b3a2c44ace13d",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.6"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -182,12 +195,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "74a165598b649f0c",
+  "active": "d48b3a2c44ace13d",
   "lastOpenFiles": [
-    "Competitions/Santa2025.md",
-    "元学习/世界模型.md",
-    "Competitions/BAAI中关村具身智能大脑大模型赛道——Rank3.md",
     "Competitions/11-17智源BAAI大脑大模型赛道决赛答辩-浅试团队.pdf",
+    "元学习/世界模型.md",
+    "Competitions/Santa2025.md",
+    "Competitions/BAAI中关村具身智能大脑大模型赛道——Rank3.md",
     "Hyper_Brain实习/重要经验/Docker.md",
     "比赛/中关村第二届具身智能.md",
     "misc/yolo学习.md",
@@ -223,7 +236,6 @@
     "代码基本功/三维立体视觉.md",
     "算法题",
     "丁师兄/阶段1/Llama & T5.md",
-    "丁师兄/阶段1/Insruct GPT论文.md",
     "丁师兄/阶段1",
     "丁师兄/阶段5",
     "丁师兄/阶段2",

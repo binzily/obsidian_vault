@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Competitions/Santa2025.md",
+                "file": "元学习/世界模型.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Santa2025"
+              "title": "世界模型"
             }
           }
         ]
@@ -184,19 +184,20 @@
   },
   "active": "74a165598b649f0c",
   "lastOpenFiles": [
-    "Competitions/BAAI中关村具身智能大脑大模型赛道——Rank3.md",
     "Competitions/Santa2025.md",
+    "元学习/世界模型.md",
+    "Competitions/BAAI中关村具身智能大脑大模型赛道——Rank3.md",
     "Competitions/11-17智源BAAI大脑大模型赛道决赛答辩-浅试团队.pdf",
-    "Hyper_Brain/重要经验/Docker.md",
+    "Hyper_Brain实习/重要经验/Docker.md",
     "比赛/中关村第二届具身智能.md",
     "misc/yolo学习.md",
     "misc/Transformer.md",
-    "Hyper_Brain/重要经验/重装WSL2 + 管理多个cuda.md",
-    "Hyper_Brain/重要经验/代理设置.md",
-    "Hyper_Brain/KTD.pdf",
-    "Hyper_Brain/实习简历包装.md",
-    "Hyper_Brain/RoboFlamingo.md",
-    "Hyper_Brain/工作日志.md",
+    "Hyper_Brain实习/重要经验/重装WSL2 + 管理多个cuda.md",
+    "Hyper_Brain实习/重要经验/代理设置.md",
+    "Hyper_Brain实习/KTD.pdf",
+    "Hyper_Brain实习/实习简历包装.md",
+    "Hyper_Brain实习/RoboFlamingo.md",
+    "Hyper_Brain实习/工作日志.md",
     "Competitions/assets/BAAI中关村具身智能大脑大模型赛道——Rank3/file-20251121100841954.pptx",
     "Competitions/assets/BAAI中关村具身智能大脑大模型赛道——Rank3",
     "Competitions/assets",
@@ -205,8 +206,8 @@
     "丁师兄/阶段2/async_总结.md",
     "pics/assets/1548152359604.png",
     "pics/assets/1548122271773.png",
-    "Hyper_Brain/机器人轨迹规划/EDMP.md",
-    "Hyper_Brain/机器人轨迹规划/misc知识.md",
+    "Hyper_Brain实习/机器人轨迹规划/EDMP.md",
+    "Hyper_Brain实习/机器人轨迹规划/misc知识.md",
     "LLM面试题/Prompt+Langchain.md",
     "LLM面试题/数学python+深度学习.md",
     "LLM面试题/强化学习.md",

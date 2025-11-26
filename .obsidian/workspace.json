@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hyper_Brain/实习简历包装.md",
+                "file": "元学习/强化学习.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 实习简历包装"
+              "title": "强化学习 的反向链接列表"
             }
           },
           {
@@ -182,7 +182,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "802c031e25bcb2e3",
+  "active": "74a165598b649f0c",
   "lastOpenFiles": [
     "元学习/世界模型.md",
     "元学习/强化学习.md",

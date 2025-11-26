@@ -41,7 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -182,7 +182,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "74a165598b649f0c",
+  "active": "802c031e25bcb2e3",
   "lastOpenFiles": [
     "元学习/世界模型.md",
     "元学习/强化学习.md",

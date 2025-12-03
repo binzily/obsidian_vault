@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM面试题/夯实基础+进阶必备.md",
+                "file": "LLM面试题/数学python+深度学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "夯实基础+进阶必备"
+              "title": "数学python+深度学习"
             }
           }
         ]
@@ -195,11 +195,11 @@
   },
   "active": "f32e4d2bcd22b299",
   "lastOpenFiles": [
+    "LLM面试题/Prompt+Langchain.md",
     "LLM面试题/数学python+深度学习.md",
     "LLM面试题/强化学习.md",
     "LLM面试题/夯实基础+进阶必备.md",
     "LLM面试题/assets/1718360496747-1c176700-1222-4c23-8441-1047d37c0a4b.png",
-    "LLM面试题/Prompt+Langchain.md",
     "Hyper_Brain实习/重要经验/Docker.md",
     "元学习/世界模型.md",
     "元学习/强化学习.md",

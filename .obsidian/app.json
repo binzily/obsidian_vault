@@ -2,5 +2,7 @@
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
   "readableLineLength": false,
-  "showIndentGuide": false
+  "showIndentGuide": false,
+  "promptDelete": false,
+  "attachmentFolderPath": "/"
 }

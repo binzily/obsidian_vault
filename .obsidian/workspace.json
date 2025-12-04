@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d4bc2f9e6fc20a5d",
+        "id": "a4fa96a477c1b2ed",
         "type": "tabs",
         "children": [
           {
-            "id": "f32e4d2bcd22b299",
+            "id": "ce99a4161c42b0d9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -193,13 +193,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f32e4d2bcd22b299",
+  "active": "ce99a4161c42b0d9",
   "lastOpenFiles": [
-    "LLM面试题/Prompt+Langchain.md",
+    "LLM面试题/assets/数学python+深度学习/file-20251204083821268.png",
     "LLM面试题/数学python+深度学习.md",
-    "LLM面试题/强化学习.md",
+    "LLM面试题/assets/数学python+深度学习",
+    "LLM面试题/assets",
+    "LLM面试题/Prompt+Langchain.md",
     "LLM面试题/夯实基础+进阶必备.md",
+    "LLM面试题/强化学习.md",
+    "LLM面试题/assets/数学python+深度学习/file-20251204083406128.png",
+    "LLM面试题/assets/Prompt+Langchain/file-20251204083622443.png",
+    "LLM面试题/assets/Prompt+Langchain/file-20251204083556553.png",
     "LLM面试题/assets/1718360496747-1c176700-1222-4c23-8441-1047d37c0a4b.png",
+    "LLM面试题/assets/Prompt+Langchain",
+    "LLM面试题/assets/数学python+深度学习/file-20251204083511912.png",
+    "LLM面试题/assets/数学python+深度学习/file-20251204083440348.png",
+    "LLM面试题/assets/数学python+深度学习/file-20251204082951548.png",
+    "LLM面试题/assets/数学python+深度学习/file-20251204082832404.png",
+    "assets/数学python+深度学习/${generatedAttachmentFileName}.md",
+    "assets/数学python+深度学习",
+    "assets",
     "Hyper_Brain实习/重要经验/Docker.md",
     "元学习/世界模型.md",
     "元学习/强化学习.md",
@@ -219,26 +233,12 @@
     "Hyper_Brain实习/工作日志.md",
     "Competitions/assets",
     "丁师兄/阶段2/async_武沛齐.md",
-    "Competitions",
     "丁师兄/阶段2/async_总结.md",
     "pics/assets/1548152359604.png",
-    "pics/assets/1548122271773.png",
     "Hyper_Brain实习/机器人轨迹规划/EDMP.md",
     "Hyper_Brain实习/机器人轨迹规划/misc知识.md",
-    "pics/assets/1548124888578.png",
-    "pics/assets/1548123942072.png",
-    "pics/assets/1548122420253.png",
-    "pics/assets/1547105026929.png",
-    "pics/assets/1547103297864.png",
     "算法题/数组.md",
     "代码基本功/learn_cpp.md",
-    "代码基本功/C++提高编程.md",
-    "代码基本功/三维立体视觉.md",
-    "算法题",
-    "丁师兄/阶段1",
-    "丁师兄/阶段5",
-    "丁师兄/阶段2",
-    "pics/assets/v2-4868fef130a63cad60f185b185d9b849_1440w.jpg",
-    "pics/assets/Untitled diagram-2025-04-16-014316.png"
+    "代码基本功/C++提高编程.md"
   ]
 }

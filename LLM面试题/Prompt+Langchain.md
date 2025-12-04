@@ -10,7 +10,7 @@ ChatGPT = InstructGPT的核心技术 + 针对对话的优化训练。
 
 ### 3. ==什么是自动提示工程师技术？==
 
-![img](E:\Work\Documents\Typora_files\LLM面试题\assets\1718360496747-1c176700-1222-4c23-8441-1047d37c0a4b.png)
+
 
 ### 4.==思维链是一种离散式提示学习==
 

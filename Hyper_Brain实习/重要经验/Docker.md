@@ -24,7 +24,7 @@ docker中有这样几个概念：
 
 ```bash
 # docker run -d -it --name ktd --network host -v E:\Work\Develop:/workspace --gpus all -p 7890:7890 pytorch/pytorch:1.8.1-cuda11.1-cudnn8-devel
-docker run -d -it --name rb --network host -v E:\Work:/workspace --gpus all pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
+docker run -d -it --name rb --network host -v E:\Work:/workspace -e DISPLAY=host.docker.internal:0.0 --gpus all pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 docker exec -it ktd /bin/bash
 ```
 

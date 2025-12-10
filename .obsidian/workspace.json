@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM面试题/强化学习.md",
+                "file": "Hyper_Brain实习/重要经验/Docker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "强化学习"
+              "title": "Docker"
             }
           }
         ]
@@ -195,9 +195,10 @@
   },
   "active": "ce99a4161c42b0d9",
   "lastOpenFiles": [
+    "元学习/世界模型.md",
+    "LLM面试题/强化学习.md",
     "LLM面试题/数学python+深度学习.md",
     "LLM面试题/夯实基础+进阶必备.md",
-    "LLM面试题/强化学习.md",
     "LLM面试题/assets/强化学习/file-20251204151430609.png",
     "LLM面试题/assets/强化学习",
     "LLM面试题/Prompt+Langchain.md",
@@ -217,7 +218,6 @@
     "assets/数学python+深度学习",
     "assets",
     "Hyper_Brain实习/重要经验/Docker.md",
-    "元学习/世界模型.md",
     "元学习/强化学习.md",
     "Competitions/assets/BAAI中关村具身智能大脑大模型赛道——Rank3/file-20251121100841954.pptx",
     "Competitions/assets/BAAI中关村具身智能大脑大模型赛道——Rank3",

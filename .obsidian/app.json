@@ -3,6 +3,6 @@
   "newLinkFormat": "relative",
   "readableLineLength": false,
   "showIndentGuide": false,
-  "promptDelete": false,
+  "promptDelete": true,
   "attachmentFolderPath": "/"
 }

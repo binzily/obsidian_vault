@@ -2,5 +2,5 @@
   "enabledCssSnippets": [
     "custom_width"
   ],
-  "showRibbon": false
+  "showRibbon": true
 }

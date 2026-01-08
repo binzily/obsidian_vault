@@ -10,30 +10,58 @@ windows：这两个博客要结合看，有些东西不需要安装，并且可�
 
 [(4 封私信 / 4 条消息) 【保姆级】Windows 安装 CUDA 和 cuDNN - 知乎](https://zhuanlan.zhihu.com/p/32400431090)
 
-# 1.重装WSL2
+# 1.安装WSL2
 
-- 得开steam++下载，不然会报错域名解析失败。
 
-wsl --list --online列出可在线获取的 WSL 发行版。
+~~wsl --list --online列出可在线获取的 WSL 发行版。~~
 
-wsl --install -d Ubuntu-20.04安装指定版本的 Ubuntu。
+~~wsl --install -d Ubuntu-20.04安装指定版本的 Ubuntu。~~
 
-wsl --export Ubuntu G:\Ubuntu\ubuntu.tar导出。
+~~wsl --export Ubuntu G:\Ubuntu\ubuntu.tar导出。~~
 
- wsl --unregister Ubuntu
+ ~~wsl --unregister Ubuntu~~
 
-wsl --import Ubuntu G:\Ubuntu G:\ubuntu1\ubuntu.tar --version 2导入。
+~~wsl --import Ubuntu G:\Ubuntu G:\ubuntu1\ubuntu.tar --version 2导入。~~
 
-迁移路径之后如果要用其他用户启动，需要用wsl的命令来指定：
+~~迁移路径之后如果要用其他用户启动，需要用wsl的命令来指定：~~
 
-wsl --distribution Ubuntu-22.04 --user bx
+~~wsl --distribution Ubuntu-22.04 --user bx~~
 
-在ubuntu中更改默认用户：vim /etc/wsl.conf，加入：
+~~在ubuntu中更改默认用户：vim /etc/wsl.conf，加入：~~
 
-[user]
+~~[user]~~
 
-default=bx
+~~default=bx~~
 
+mirrored/autoProxy：让 WSL 更“像本机”用 `127.0.0.1:7890`
+在PowerShell 执行（普通权限即可）：
+```powershell
+@"
+[wsl2]
+networkingMode=mirrored
+autoProxy=true
+dnsTunneling=true
+firewall=true
+"@ | Set-Content -Encoding ASCII $env:USERPROFILE\.wslconfig
+```
+%% 说明（都是官方项）：
+- `networkingMode=mirrored`：启用镜像网络；Linux 内可以直接用 `127.0.0.1` 访问 Windows 上的服务。
+- `autoProxy=true`：强制 WSL 使用 Windows 的 HTTP 代理信息（Windows 系统代理开着就会同步到 WSL）。
+- `dnsTunneling=true`：提升复杂网络/VPN/代理环境下 DNS 兼容性（Win11 22H2+ 常用）。%%
+```powershell
+wsl --install -d Ubuntu-24.04 --location E:\DockerImageLocation\Ubuntu-24.04 --no-launch
+```
+然后关键的一步：让 mirrored/autoProxy 配置生效
+```powershell
+wsl --shutdown
+wsl -d Ubuntu-24.04
+```
+做到这里应该就成功了，测试：
+```bash
+env | grep -i proxy
+
+curl -I https://changelogs.ubuntu.com/meta-release-lts
+```
 # 2.安装cudatoolkit（runfile）和cudnn（local）
 
 ​	CUDA在大版本下向下兼容。比如你装了CUDA11.5，它支持CUDA11.0-CUDA11.5的环境，但不支持CUDA10.2。所以选版本的时候直接选符合你要求的大版本的最新版就行。

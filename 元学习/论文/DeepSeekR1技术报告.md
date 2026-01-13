@@ -149,7 +149,7 @@ $R_lang = (target\ language\  words) / (all\ words)$
 - **helpfulness RM**：
     - 用 DeepSeek-V3 生成偏好对（每个 query 两个候选回答）
     - 同一对样本让 DeepSeek-V3 评 4 次，随机交换 A/B 位置减轻位置偏差
-    - 取 4 次平均分，并只保留分差 Δ>1\Delta>1Δ>1 的样本
+    - 取 4 次平均分，并只保留分差 Δ>1 的样本
     - 同时控制 chosen/rejected 长度相近，减轻“越长越高分”的偏差
     - 总计 **66,000** 对
     - RM 结构与 R1 相同但加 reward head

@@ -8,7 +8,6 @@
 - mHC 是在 **“网络深度方向”** 做稳定的信息守恒；
 - ENGRAM 是在 **“交互时间方向”** 做稳定的信息保存与检索。
 ---
-
 # Part A：mHC（Manifold-Constrained Hyper-Connections）——把“超连接”拉回可规模化训练
 
 ## A1. 从 0 到 1：为什么残差连接这么重要
@@ -19,7 +18,7 @@
 ---
 ## A2. Hyper-Connections 在做什么：把残差流变“多车道 + 可学习互通”
 
-ByteDance 的 **Hyper-Connections (HC)**（ICLR 2025）提出：传统残差连接在 **梯度消失** 与 **表示塌缩（representation collapse）** 之间存在“跷跷板”权衡（Pre-Norm 更稳梯度但易塌缩；Post-Norm 反之），那能不能让连接强度变成可学习的？
+ByteDance 的 **Hyper-Connections (HC)**（ICLR 2025）提出：传统残差连接在 **梯度消失** 与 **表示塌缩之间存在“跷跷板”权衡（Pre-Norm 更稳梯度但易塌缩；Post-Norm 反之），那能不能让连接强度变成可学习的？
 
 HC 的关键操作是：
 
@@ -40,63 +39,51 @@ HC 的关键操作是：
 直觉：HC 让不同深度、不同“车道”的信息可以更灵活地交换，理论上表达力更强，实验上也经常更好。
 
 ---
-
-## A3. HC 为什么会在大规模训练里崩：问题集中在 “(H^{res})” 的连乘
+## A3. HC 为什么会在大规模训练里崩：问题集中在 “$H^{res}$” 的连乘
 
 mHC 论文做了一个很清晰的诊断：
 
-- 当你把 HC 堆很多层时，残差流的“身份映射”不再是简单的 (I)，而变成很多层的 (H^{res}) 连乘（类似 (\prod H^{res})）。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+- 当你把 HC 堆很多层时，残差流的“身份映射”不再是简单的 $I$，而变成很多层的 $H^{res}$ 连乘（类似 $(\prod H^{res})$。
     
-- 因为 (H^{res}_l) 是**完全不受约束**的可学习矩阵，这个连乘几乎必然偏离 identity，导致信号在前向/反向传播中出现 **爆炸或消失**。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+- 因为 $H^{res}_l$是**完全不受约束**的可学习矩阵，这个连乘几乎必然偏离 identity，导致信号在前向/反向传播中出现 **爆炸或消失**。
     
-- 论文用一个“增益幅度”指标（基于复合映射的行/列和的最大绝对值）量化这种放大效应，在 27B 实验里，复合映射的增益峰值能到 **3000**，这就是“残差流爆炸”的直接证据。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+- 论文用一个“增益幅度”指标（基于复合映射的行/列和的最大绝对值）量化这种放大效应，在 27B 实验里，复合映射的增益峰值能到 3000，这就是“残差流爆炸”的直接证据。
     
-- 现象层面：HC 训练会出现 loss 在某个 step（论文示例约 12k step）突然飙升，并且与梯度范数异常相关。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
-    
+- 现象层面：HC 训练会出现 loss 在某个 step（论文示例约 12k step）突然飙升，并且与梯度范数异常相关。
 
 一句话总结：**HC 把“残差的稳定身份通路”改成了“很多不受约束的混合矩阵连乘”，于是稳定性没了。**
 
 ---
-
 ## A4. mHC 的核心技术：把 (H^{res}) 投影到“可守恒”的矩阵流形上
 
 mHC 的做法很“硬核但干净”：
 
-- 他们把 (H^{res}_l) 不再当成任意矩阵，而是投影到一个特定流形：**Birkhoff polytope（双随机矩阵集合）**。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+- 他们把 $H^{res}_l$不再当成任意矩阵，而是投影到一个特定流形：**Birkhoff polytope（双随机矩阵集合）**。
     
-- **双随机矩阵（doubly stochastic matrix）** 的性质：每一行和每一列的元素和都等于 1。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
-    
+- **双随机矩阵（doubly stochastic matrix）** 的性质：每一行和每一列的元素和都等于 1。
 
 这带来两个关键好处（也是论文抓住的“稳定性来源”）：
 
-1. **凸组合解释**：(H^{res}_l x_l) 相当于对 n 条残差流做凸组合（不会凭空把“平均强度”放大很多倍），因此能更好地控制信号尺度，避免爆炸/消失。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+1. **凸组合解释**：$H^{res}_l x_l$相当于对 n 条残差流做凸组合（不会凭空把“平均强度”放大很多倍），因此能更好地控制信号尺度，避免爆炸/消失。（PS：①凸组合：加权系数非负且总和为1；②残差流指F(·)）
     
-2. **乘法闭包（closure）**：双随机矩阵相乘仍是双随机矩阵，所以即使跨很多层连乘，复合映射仍保有这种“守恒/稳定”结构，等价于把 identity mapping 的稳定性“结构化地找回来了”。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+2. **乘法闭包（closure）**：双随机矩阵相乘仍是双随机矩阵，所以即使跨很多层连乘，复合映射仍保有这种“守恒/稳定”结构，等价于把 identity mapping 的稳定性“结构化地找回来了”。
     
-
 ---
-
 ## A5. 关键算法：Sinkhorn–Knopp 把任意矩阵“拉回”双随机
 
 mHC 用 **Sinkhorn–Knopp** 做投影（经典 1967 算法，但在这里用得很恰当）：
 
-1. 先把未约束矩阵 (\tilde{H}^{res}_l) 做指数变换得到正矩阵 (M^{(0)} = \exp(\tilde{H}^{res}_l))。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+1. 先把未约束矩阵 $\tilde{H}^{res}_l$ 做指数变换得到正矩阵 $M^{(0)} = \exp(\tilde{H}^{res}_l)$。
     
-2. 然后迭代地做“列归一化 + 行归一化”：
-    
+2. 然后迭代地做“列归一化 + 行归一化”：$M^{(t)} = T_r( T_c(M^{(t-1)})$
+$T_r$表示把每一行归一到和为 1，$T_c$ 表示把每一列归一到和为 1。迭代收敛后就是双随机矩阵。
 
-[  
-M^{(t)} = T_r( T_c(M^{(t-1)}) )  
-]
+3. 论文里实际用 $t_{\max}=20$ 次迭代作为工程可用的折中。
 
-(T_r) 表示把每一行归一到和为 1，(T_c) 表示把每一列归一到和为 1。迭代收敛后就是双随机矩阵。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))  
-3. 论文里实际用 (t_{\max}=20) 次迭代作为工程可用的折中。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
-
-同时，mHC 也对 (H^{pre})、(H^{post}) 做了可控的约束形式（sigmoid 等），但最核心的“稳定性闸门”就是 **(H^{res}) 的双随机约束**。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+同时，mHC 也对 $H^{pre}$、$H^{post}$ 做了可控的约束形式（sigmoid 等），但最核心的“稳定性闸门”就是 **$H^{res}$ 的双随机约束**。
 
 ---
-
-## A6. 工程化部分（很多人读论文会跳过，但这是 DeepSeek 风格的“落地关键”）
+## A6. 工程化部分
 
 mHC 不只是提出一个数学约束，还明确回答了一个现实问题：
 
@@ -104,49 +91,38 @@ mHC 不只是提出一个数学约束，还明确回答了一个现实问题：
 
 他们给了三类系统优化：
 
-- **Kernel Fusion**：把多个操作融合，减少内存读写与 kernel launch 开销，并针对 mHC 的大维度隐藏态优化 RMSNorm 的执行顺序等。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+- **Kernel Fusion**：把多个操作融合，减少内存读写与 kernel launch 开销，并针对 mHC 的大维度隐藏态优化 RMSNorm 的执行顺序等。
     
-- **Recomputing（选择性重计算）**：通过分块保存/重算中间激活，控制显存峰值（表 3 讨论了哪些激活存、哪些重算，以及分块大小如何影响峰值）。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+- **Recomputing（选择性重计算）**：通过分块保存/重算中间激活，控制显存峰值（表 3 讨论了哪些激活存、哪些重算，以及分块大小如何影响峰值）。
     
-- **DualPipe 通信-计算重叠**：扩展 pipeline schedule，把 mHC 带来的额外算子塞进通信空隙里，减少“纯等待”。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
-    
+- **DualPipe 通信-计算重叠**：扩展 pipeline schedule，把 mHC 带来的额外算子塞进通信空隙里，减少“纯等待”。
 
-最终他们报告：在 expansion rate (n=4) 时，大规模训练额外时间开销约 **6.7%**。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
-
+最终他们报告：在 expansion rate (n=4) 时，大规模训练额外时间开销约 **6.7%**。
 这点很重要：mHC 不是“只在 toy setting 有用”，而是明确奔着大模型训练去的。
 
 ---
+## A7. 作为学习者，读 mHC 最应该“抓住并复现”的 3 个点
 
-## A7. 你作为学习者，读 mHC 最应该“抓住并复现”的 3 个点
-
-1. **不稳定性的数学来源**：HC 的问题不是“某个 trick 没调好”，而是 (\prod H^{res}) 破坏 identity mapping 导致信号增益失控。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+1. **不稳定性的数学来源**：HC 的问题不是“某个 trick 没调好”，而是 $\prod H^{res}$破坏 identity mapping 导致信号增益失控。
     
-2. **双随机约束为什么有效**：凸组合 + 乘法闭包，让“跨层复合映射”仍保有守恒结构。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+2. **双随机约束为什么有效**：凸组合 + 乘法闭包，让“跨层复合映射”仍保有守恒结构。
     
-3. **Sinkhorn 投影怎么实现**：(\exp) 保正、行列交替归一、固定迭代次数（20）是可落地的工程解。([arXiv](https://arxiv.org/pdf/2512.24880 "mHC: Manifold-Constrained Hyper-Connections"))
+3. **Sinkhorn 投影怎么实现**：$\exp$ 保正、行列交替归一、固定迭代次数（20）是可落地的工程解。
     
-
-一个非常建议的动手练习：用 numpy 写 20 行代码实现 Sinkhorn，把随机矩阵投影成双随机，然后数值验证“行和/列和≈1、连乘后仍≈1”。这是理解 mHC 的最短路径。
-
 ---
-
 # Part B：ENGRAM —— 用“typed memory + dense retrieval”做长期记忆，不靠复杂系统
 
 ## B1. ENGRAM 解决的“现实痛点”：上下文窗口再长也会失忆/分心
 
 ENGRAM 论文开篇把问题讲得很直接：
 
-- LLM 应用需要 **long-horizon consistency**：记住用户偏好、之前发生的事件、之前的指令和工作流。([arXiv](https://arxiv.org/pdf/2511.12960v1 "ENGRAM: Effective, Lightweight Memory Orchestration for Conversational Agents"))
-    
-- 但 LLM 的输入超过上下文窗口就“重置”；就算窗口很大，长上下文也会有“lost-in-the-middle / 分心”之类现象。([arXiv](https://arxiv.org/pdf/2511.12960v1 "ENGRAM: Effective, Lightweight Memory Orchestration for Conversational Agents"))
-    
-- 许多现有记忆系统采用知识图谱、多阶段检索、OS 风格调度，导致工程复杂、自由度大、不容易复现和分析。([arXiv](https://arxiv.org/pdf/2511.12960v1 "ENGRAM: Effective, Lightweight Memory Orchestration for Conversational Agents"))
-    
+- LLM 应用需要 **long-horizon consistency**：记住用户偏好、之前发生的事件、之前的指令和工作流。
+- 但 LLM 的输入超过上下文窗口就“重置”；就算窗口很大，长上下文也会有“lost-in-the-middle / 分心”之类现象。
+- 许多现有记忆系统采用知识图谱、多阶段检索、OS 风格调度，导致工程复杂、自由度大、不容易复现和分析。
 
-ENGRAM 的立场是：**先把记忆系统做成一个简单、可解释、可 ablate 的强基线**。([arXiv](https://arxiv.org/pdf/2511.12960v1 "ENGRAM: Effective, Lightweight Memory Orchestration for Conversational Agents"))
+ENGRAM 的立场是：**先把记忆系统做成一个简单、可解释、可 ablate 的强基线**。
 
 ---
-
 ## B2. ENGRAM 的核心架构：3 类记忆 + 1 个 router + 1 个 retriever
 
 ENGRAM 把对话中的信息分成三类“规范记忆类型”：

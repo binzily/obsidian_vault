@@ -116,10 +116,10 @@ mHC 不只是提出一个数学约束，还明确回答了一个现实问题：
 
 **Engram 是插在 Transformer 里的一个“可训练、可扩展、按需查表”的记忆模块**：每个 token 只触发固定次数的查表（所以每 token 计算量几乎不随记忆规模增长）。**是**给每个位置的 token 表示（hidden state）增加一条“记忆分支”的残差更新：先从静态 N-gram 记忆表里检索出向量，再和当前 hidden state 做门控/融合，然后把融合结果并回主干表示。
 
-可以把它理解为：对每个 token，模型除了标准的
-> hidden → attention/MLP → hidden  
-> 之外，多了一条  
-> hidden + (lookup(局部 N-gram) 经 gating 后的向量) → 更强的 hidden
+**可以把它理解为：对每个 token，模型除了标准的**
+> **hidden → attention/MLP → hidden**  
+> **之外，多了一条**  
+> **hidden + (lookup(局部 N-gram) 经 gating 后的向量) → 更强的 hidden**
 
 所以它**改变了 token 在某一层后的表示**（这点像“对 hidden state 做一次条件残差更新”）。
 

@@ -87,5 +87,54 @@ Q2：为什么一般不会“混在一起训练成一个可切换模型”？
 - **MAG** 是“滑窗注意力一条支路 + 记忆网络一条支路”，最后 gate 融合。
 - **MAL** 是把记忆当成一层（layer）插在注意力前/中间。
 
+```python
+# Titans(LMM) = 只用长期记忆模块 Mθ 做序列建模（无 attention）
 
+# ---- 参数/模块（可训练）----
+# Embed: token -> 向量 x_t
+# Mθ  : 长期记忆网络（MLP），参数 θ（训练时学；推理时也会继续“记忆式更新”）
+# LMHead: 把隐藏向量 y_t -> vocab logits（通常是线性层；也可与 Embed 权重共享）
+# WQ, WK, WV: 三个投影矩阵（把 x_t 变成 q/k/v）
+
+# ---- 运行时状态（会变）----
+# θ_t : 当前时刻的记忆参数（注意：会被 online 更新）
+# u   : 动量缓存（和 θ 同形状）
+
+init θ = θ0
+init u = 0
+
+for t = 1..T:
+    # 0) token -> 向量
+    x = Embed(token_t)                 # x ∈ R^d
+
+    # 1) 读长期记忆（retrieve）：forward 得到当前步的“隐藏表示”
+    q = x @ WQ
+    y = Mθ(q)                          # y ∈ R^d'（读=forward，本步先不改θ）
+
+    # 2) 预测头（Language Modeling head）：把 y 变成“下一个 token”的概率分布
+    logits = LMHead(y)                 # logits ∈ R^{|V|}
+    p_next = softmax(logits)           # 下一个 token 的分布
+
+    # 训练时：语言模型 loss（预测 token_{t+1}）
+    #   loss_lm = CE(p_next, token_{t+1})
+    # 推理时：next_token = argmax(p_next) 或 sample(p_next)
+
+    # 3) 计算“写不写”的信号（surprise）：用联想记忆目标产生梯度
+    k    = x @ WK
+    v    = x @ WV
+    pred = Mθ(k)                       # 用记忆网络“联想”value
+    loss_mem = MSE(pred, v)            # 联想记忆损失（key->value）
+
+    g = grad(loss_mem w.r.t θ)         # 梯度越大 ≈ 越“惊讶/更该记”
+
+    # 4) 写入长期记忆（online update）：动量 + 遗忘（weight decay）
+    u = μ*u + g
+    gate = ForgetGate(g)               # 0~1：越大=越该忘（自适应遗忘）
+    θ = (1 - gate)*θ - η*u             # “先忘一点，再记一点”（online 更新）
+
+# 总训练 loss（常见做法）:
+#   loss_total = loss_lm + λ * loss_mem
+# 然后对 Embed、LMHead、WQ/WK/WV、以及 θ0 等做外循环反向传播；
+# 同时 θ 在序列内按上面的 online 规则滚动更新（内循环）。
+```
 

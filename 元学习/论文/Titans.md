@@ -77,3 +77,13 @@ for t in 1..T:
 
 return outputs/logits
 ```
+
+Q1：Titan的大模型在训练时，要训练MAC、MAL、MAG吗？是混在一起训练还是单独训出三个模型比如：Titans-MAC、Titans-MAL、Titans-MAG？
+答：论文先说“提出三种 Titans 变体”，并强调每种都有不同 trade-off（权衡）。论文里确实是“**Titans-MAC**”、“**Titans-MAG**”、“**Titans-MAL**”（再加 Titans(LMM)）这种“分别训练、分别评测”的做法，而不是一个模型里混着三种模式随时切换。
+
+Q2：为什么一般不会“混在一起训练成一个可切换模型”？
+因为三者的计算图/接口不一样：
+- **MAC** 是把 `mem` 当成“额外上下文 token”拼进注意力输入（还会分段 chunk）。
+- **MAG** 是“滑窗注意力一条支路 + 记忆网络一条支路”，最后 gate 融合。
+- **MAL** 是把记忆当成一层（layer）插在注意力前/中间。
+

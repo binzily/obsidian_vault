@@ -1,5 +1,5 @@
 ```python
-# TITANS (streaming / autoregressive) — 清晰伪代码
+# TITANS — 清晰伪代码
 # 输入:
 #   tokens[1..T] : 一个序列（语言/时间序列都可）
 #   mode         : "MAC" | "MAG" | "MAL"   (三种 Titans 变体)

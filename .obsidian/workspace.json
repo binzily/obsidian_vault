@@ -4,20 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e88888ba2e922b2a",
+        "id": "b80e51be808c5992",
         "type": "tabs",
         "children": [
           {
-            "id": "9290961d615b7b7e",
+            "id": "788971c737ad2f40",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "未命名.base",
-                "viewName": "表格"
+                "file": "元学习/论文/DeepSeekR1技术报告.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "未命名"
+              "icon": "lucide-file",
+              "title": "DeepSeekR1技术报告"
             }
           }
         ]
@@ -192,18 +193,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9290961d615b7b7e",
+  "active": "788971c737ad2f40",
   "lastOpenFiles": [
+    "pics/assets/1548146903960.png",
+    "未命名.base",
+    "元学习/论文/DeepSeekR1技术报告.md",
     "元学习/论文/Titans.md",
     "元学习/论文/Pre-Norm 和 Post-Norm.md",
     "元学习/论文/mHC Engram.md",
-    "元学习/论文/DeepSeekR1技术报告.md",
     "元学习/强化学习.md",
     "汽车/底盘/未命名.md",
     "元学习/论文",
     "Hyper_Brain实习/重要经验/重装WSL2 + 管理多个cuda.md",
     "Hyper_Brain实习/重要经验/Docker.md",
-    "未命名.base",
     "汽车/底盘",
     "汽车",
     "元学习/世界模型.md",
@@ -238,7 +240,6 @@
     "Hyper_Brain实习/RoboFlamingo.md",
     "Hyper_Brain实习/工作日志.md",
     "丁师兄/阶段2/async_武沛齐.md",
-    "丁师兄/阶段2/async_总结.md",
-    "Hyper_Brain实习/机器人轨迹规划/EDMP.md"
+    "丁师兄/阶段2/async_总结.md"
   ]
 }

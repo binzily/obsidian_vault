@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "元学习/论文/DeepSeekR1技术报告.md",
+                "file": "元学习/论文/Pre-Norm 和 Post-Norm.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DeepSeekR1技术报告"
+              "title": "Pre-Norm 和 Post-Norm"
             }
           }
         ]
@@ -195,9 +195,9 @@
   },
   "active": "788971c737ad2f40",
   "lastOpenFiles": [
+    "元学习/论文/DeepSeekR1技术报告.md",
     "pics/assets/1548146903960.png",
     "未命名.base",
-    "元学习/论文/DeepSeekR1技术报告.md",
     "元学习/论文/Titans.md",
     "元学习/论文/Pre-Norm 和 Post-Norm.md",
     "元学习/论文/mHC Engram.md",
@@ -226,7 +226,6 @@
     "LLM面试题/assets/Prompt+Langchain",
     "LLM面试题/assets/数学python+深度学习/file-20251204083511912.png",
     "LLM面试题/assets/数学python+深度学习/file-20251204083440348.png",
-    "LLM面试题/assets/数学python+深度学习/file-20251204082951548.png",
     "assets/数学python+深度学习/${generatedAttachmentFileName}.md",
     "assets/数学python+深度学习",
     "assets",

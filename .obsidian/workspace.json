@@ -11,14 +11,13 @@
             "id": "9290961d615b7b7e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "元学习/论文/Titans.md",
-                "mode": "source",
-                "source": false
+                "file": "未命名.base",
+                "viewName": "表格"
               },
-              "icon": "lucide-file",
-              "title": "Titans"
+              "icon": "lucide-table",
+              "title": "未命名"
             }
           }
         ]
@@ -195,10 +194,10 @@
   },
   "active": "9290961d615b7b7e",
   "lastOpenFiles": [
-    "元学习/论文/mHC Engram.md",
     "元学习/论文/Titans.md",
-    "元学习/论文/DeepSeekR1技术报告.md",
     "元学习/论文/Pre-Norm 和 Post-Norm.md",
+    "元学习/论文/mHC Engram.md",
+    "元学习/论文/DeepSeekR1技术报告.md",
     "元学习/强化学习.md",
     "汽车/底盘/未命名.md",
     "元学习/论文",

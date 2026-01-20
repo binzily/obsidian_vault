@@ -4,5 +4,6 @@
   "readableLineLength": false,
   "showIndentGuide": false,
   "promptDelete": true,
-  "attachmentFolderPath": "/"
+  "attachmentFolderPath": "/",
+  "showLineNumber": true
 }

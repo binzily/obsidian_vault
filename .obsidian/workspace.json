@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM面试题/强化学习.md",
+                "file": "元学习/早期强化学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "强化学习"
+              "title": "早期强化学习"
             }
           }
         ]
@@ -183,6 +183,9 @@
   },
   "active": "2da84efc62166f30",
   "lastOpenFiles": [
+    "元学习/强化学习.md",
+    "元学习/早期强化学习.md",
+    "LLM面试题/强化学习.md",
     "Hyper_Brain实习/重要经验/github大型项目读懂代码技巧.md",
     "Hyper_Brain实习/重要经验/Docker.md",
     "Hyper_Brain实习/重要经验/重装WSL2 + 管理多个cuda.md",
@@ -193,7 +196,6 @@
     "Hyper_Brain实习/工作日志.md",
     "Hyper_Brain实习/重要经验/Vscode调试.md",
     "Hyper_Brain实习/重要经验/robofin_win.md",
-    "元学习/强化学习.md",
     "元学习/论文/Titans.md",
     "元学习/论文/DeepSeekR1技术报告.md",
     "元学习/论文/Gated Attention.md",
@@ -202,7 +204,6 @@
     "Competitions/11-17智源BAAI大脑大模型赛道决赛答辩-浅试团队.pdf",
     "元学习/世界模型.md",
     "LLM面试题/数学python+深度学习.md",
-    "LLM面试题/强化学习.md",
     "LLM面试题/夯实基础+进阶必备.md",
     "LLM面试题/Prompt+Langchain.md",
     "LLM面试题/assets/强化学习/file-20251204151430609.png"

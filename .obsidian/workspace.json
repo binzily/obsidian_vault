@@ -13,28 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "元学习/论文/Titans.md",
+                "file": "Hyper_Brain实习/重要经验/重装WSL2 + 管理多个cuda.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Titans"
-            }
-          },
-          {
-            "id": "9d4626d9d8e570d0",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.5"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.11.5"
+              "title": "重装WSL2 + 管理多个cuda"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,23 +181,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9d4626d9d8e570d0",
+  "active": "2da84efc62166f30",
   "lastOpenFiles": [
+    "Hyper_Brain实习/重要经验/Docker.md",
+    "Hyper_Brain实习/重要经验/重装WSL2 + 管理多个cuda.md",
+    "Hyper_Brain实习/重要经验/github大型项目读懂代码技巧.md",
+    "元学习/论文/DeepSeekR1技术报告.md",
+    "元学习/论文/Titans.md",
     "元学习/论文/mHC Engram.md",
     "元学习/论文/Pre-Norm 和 Post-Norm.md",
-    "元学习/论文/DeepSeekR1技术报告.md",
     "LLM面试题/Prompt+Langchain.md",
     "LLM面试题/数学python+深度学习.md",
     "LLM面试题/强化学习.md",
     "LLM面试题/夯实基础+进阶必备.md",
     "元学习/论文/Gated Attention.md",
-    "元学习/论文/Titans.md",
     "元学习/强化学习.md",
     "元学习/世界模型.md",
     "元学习/早期强化学习.md",
-    "Hyper_Brain实习/重要经验/github大型项目读懂代码技巧.md",
-    "Hyper_Brain实习/重要经验/Docker.md",
-    "Hyper_Brain实习/重要经验/重装WSL2 + 管理多个cuda.md",
     "Hyper_Brain实习/重要经验/代理设置.md",
     "Hyper_Brain实习/RoboFlamingo.md",
     "Hyper_Brain实习/实习简历包装.md",

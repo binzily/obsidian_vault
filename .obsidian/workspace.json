@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "元学习/强化学习.md",
+                "file": "投资/区块链.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "强化学习"
+              "title": "区块链"
             }
           }
         ]
@@ -185,5 +185,9 @@
     }
   },
   "active": "f955118cff3b7bad",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "元学习/强化学习.md",
+    "投资/区块链.md",
+    "投资"
+  ]
 }

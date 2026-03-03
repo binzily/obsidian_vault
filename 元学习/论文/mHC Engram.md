@@ -8,8 +8,7 @@
 - mHC 是在 **“网络深度方向”** 做稳定的信息守恒；
 - ENGRAM 是在 **“交互时间方向”** 做稳定的信息保存与检索。
 ---
-# Part A：mHC（Manifold-Constrained Hyper-Connections）——把“超连接”拉回可规模化训练
-
+# Part A：mHC（Manifold-Constrained Hyper-Connections）
 ## A1. 从 0 到 1：为什么残差连接这么重要
 
 经典残差连接（ResNet/Transformer 的残差思想）可以写成：$x_{l+1} = x_l + F(x_l, W_l)$

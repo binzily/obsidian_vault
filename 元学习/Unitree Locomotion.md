@@ -1,5 +1,5 @@
 [unitreerobotics/unitree_rl_lab: This is a repository for reinforcement learning implementation for Unitree robots, based on IsaacLab.](https://github.com/unitreerobotics/unitree_rl_lab?tab=readme-ov-file) Unitree RL Lab 是一个用于 Unitree 机器人强化学习（locomotion policy）训练、验证和部署的完整工作流框架，不是新算法，而是RL infra。
-**面向 Unitree Go2 的鲁棒速度跟踪强化学习：在 Isaac Lab 中训练策略，并通过 MuJoCo Sim2Sim 评估跨物理引擎泛化；针对 actuator/延迟/地形课程带来的 sim2sim gap 进行建模与改进。**
+**面向 Unitree Go2 的鲁棒速度跟踪强化学习：在 Unitree Go2 velocity task 上，研究训练阶段的 actuator 建模对 MuJoCo sim2sim 性能的影响；比较 baseline 与 actuator-aware 训练在 tracking error、fall rate、push recovery 上的差异。**
 
 ## 0.前置知识
 

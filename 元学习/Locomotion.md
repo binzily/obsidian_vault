@@ -1,4 +1,4 @@
-[unitreerobotics/unitree_rl_lab: This is a repository for reinforcement learning implementation for Unitree robots, based on IsaacLab.](https://github.com/unitreerobotics/unitree_rl_lab?tab=readme-ov-file)
+[unitreerobotics/unitree_rl_lab: This is a repository for reinforcement learning implementation for Unitree robots, based on IsaacLab.](https://github.com/unitreerobotics/unitree_rl_lab?tab=readme-ov-file) Unitree RL Lab 是一个用于 Unitree 机器人强化学习（locomotion policy）训练、验证和部署的完整工作流框架，不是新算法，而是RL infra。
 **面向 Unitree Go2 的鲁棒速度跟踪强化学习：在 Isaac Lab 中训练策略，并通过 MuJoCo Sim2Sim 评估跨物理引擎泛化；针对 actuator/延迟/地形课程带来的 sim2sim gap 进行建模与改进。**
 
 ## 0.前置知识
@@ -20,6 +20,27 @@
 > 机器人通信
 > ↓
 > 运行在真实系统
+> 
+> 机器人控制的本质：
+> 传感 → 计算 → 执行，也就是：
+> 观测
+    ↓
+   决策
+    ↓
+   执行 的循环，通常是**200Hz~1000Hz**。
+> 
+> 例如，每5ms，系统要完成：
+> 读取传感器
+>  ↓
+> 运行控制算法
+>  ↓
+> 发送电机命令
+
+用第一性原理拆开机器人：
+
+
+
+
 
 sim2sim、sim2real gap的原因有这么几类：
 - actuator ：真实有延迟/摩擦。

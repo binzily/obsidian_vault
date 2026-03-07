@@ -1,5 +1,5 @@
 [unitreerobotics/unitree_rl_lab: This is a repository for reinforcement learning implementation for Unitree robots, based on IsaacLab.](https://github.com/unitreerobotics/unitree_rl_lab?tab=readme-ov-file) Unitree RL Lab 是一个用于 Unitree 机器人强化学习（locomotion policy）训练、验证和部署的完整工作流框架，不是新算法，而是RL infra。
-**面向 Unitree Go2 的鲁棒速度跟踪强化学习：在 Unitree Go2 velocity task 上，研究训练阶段的 actuator 建模对 MuJoCo sim2sim 性能的影响；比较 baseline 与 actuator-aware 训练在 tracking error、fall rate、push recovery 上的差异。**
+**面向 Unitree Go2 的鲁棒速度跟踪强化学习：基于 Unitree RL Lab 的 Go2 locomotion，研究“面向 MuJoCo 目标域的 actuator 参数辨识”是否能比常规 domain randomization 更有效地缩小 Isaac→MuJoCo 的 transfer gap。**
 
 ## 0.前置知识
 
@@ -36,8 +36,5 @@
 >  ↓
 > 发送电机命令
 
-sim2sim、sim2real gap的原因有这么几类：
-- actuator ：真实有延迟/摩擦。
-- 控制延迟：真实机器人感知 → 控制 → 执行，存在10ms ~ 30ms latency，而仿真几乎没有延迟。
-- 噪声。
-- 动力学参数误差：质量、摩擦、惯量。
+sim2sim、sim2real gap的原因：ETH 的 `legged_gym` README 直接把 **actuator network** 列为 sim-to-real transfer 的核心组件之一，和 friction/mass randomization、噪声观测、随机推搡并列。
+

@@ -27,6 +27,13 @@ docker中有这样几个概念：
 docker run -d -it --name rb --network host -v E:\Work:/workspace -e DISPLAY=host.docker.internal:0.0 --gpus all pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 docker exec -it ktd /bin/bash
 ```
+让VS Code Attach 后默认就用 root：
+打开命令面板，执行 **Dev Containers: Open Container Configuration File**，加上
+```json
+{
+  "remoteUser": "root"
+}
+```
 
 ```bash
 conda init bash
